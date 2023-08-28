@@ -63,7 +63,7 @@ export class BaseRepo<T> extends KnexBaseRepo implements IBaseQuery<T> {
 
   insert(
     value: T,
-    options: { returning?: string[]; generateId: boolean },
+    options?: { returning?: string[]; generateId?: boolean },
   ): Knex.QueryBuilder<T, any> {
     const { generateId = true, returning = ['*'] } = options;
 
